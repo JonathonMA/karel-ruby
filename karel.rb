@@ -106,8 +106,8 @@ class Map
       rx == bx && ry == by
     end
 
-    if beeper_i == -1
-      raise RobotNotOnBeeper, "(#{x}, #{y})"
+    if beeper_i == nil
+      raise RobotNotOnBeeper, "(#{rx}, #{ry})"
     end
 
     @beepers.delete_at(beeper_i)
