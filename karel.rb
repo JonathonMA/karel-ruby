@@ -17,7 +17,7 @@ class Map
       row.map do |tile|
         case tile
         when :wall
-          "#"
+          "▒"
         when :floor
           "."
         else
