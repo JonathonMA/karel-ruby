@@ -75,7 +75,7 @@ class Map
     @robot_facing = relative_facing(1)
   end
 
-  private def relative_facing(left_turns)
+  def relative_facing(left_turns)
     DIRECTIONS[(DIRECTIONS.index(@robot_facing) + left_turns) % DIRECTIONS.size]
   end
 
@@ -372,7 +372,7 @@ class Runner
 end
 
 module Karel
-  module_function def run(world, &program)
+  def self.run(world, &program)
     world_file = File.expand_path("../worlds/#{world}.txt", __FILE__)
     world_str = IO.read(world_file)
     world = World.new(world_str)
