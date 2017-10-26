@@ -373,7 +373,8 @@ end
 
 module Karel
   module_function def run(world, &program)
-    world_str = IO.read("worlds/#{world}.txt")
+    world_file = File.expand_path("../worlds/#{world}.txt", __FILE__)
+    world_str = IO.read(world_file)
     world = World.new(world_str)
 
     runner = Runner.new(world, program)
