@@ -373,6 +373,7 @@ end
 
 module Karel
   def self.run(world, &program)
+    world = ENV.fetch("KAREL_WORLD", world)
     world_file = File.expand_path("../worlds/#{world}.txt", __FILE__)
     world_str = IO.read(world_file)
     world = World.new(world_str)
